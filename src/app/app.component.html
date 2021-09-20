@@ -1,0 +1,23 @@
+<p>appcomponent works!</p>
+  
+Your Name: <input type="text" placeholder="Enter Your Name" #fname><br>
+<button (click)="submit(fname)">Submit</button><br>
+
+{{cName}}{{" "+cUser}}
+
+<app-childcomponent [myValue]="value">{{value}}</app-childcomponent><br>
+<hr>
+
+<!-- Directives -->
+<app-derectives></app-derectives>
+<hr>  
+
+<!-- Filters/Pipes -->
+<app-filters></app-filters>
+<hr>
+
+<div (click)="onClick()">  
+    <button (click)="save($event)">Click Me</button>
+</div>
+
+<router-outlet></router-outlet> 

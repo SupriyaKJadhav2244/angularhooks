@@ -1,0 +1,145 @@
+<h3>Angular Directive</h3>
+  
+<h4>*ngIf Directive</h4>
+<input type="radio" name="gender" (click)="change('Male')">Male
+<input type="radio" name="gender" (click)="change('Female')">Female
+<div *ngIf="isvalid">
+    <p>You Clicked On Male</p>
+</div>
+<div *ngIf="isinvalid">
+    <p>You Clicked On Female</p>
+</div>
+
+<h4>*ngIf With else</h4>
+<input type="radio" name="Gender" (click)="choose('One')">One
+<input type="radio" name="Gender" (click)="choose('Two')">Two
+<div *ngIf="valid;else elseBlock;">
+    <p>You Clicked On One</p>
+</div> 
+<ng-template #elseBlock>
+    <p>You Clicked On Two</p>
+</ng-template>
+
+<h4>*ngIf with then and else Directive</h4>
+<input type="radio" name="gender" (click)="check('pink')">Pink
+<input type="radio" name="gender" (click)="check('purple')">Purple
+<div *ngIf="color;then thenblock;else elseblock;"> 
+</div>
+<ng-template #thenblock>
+    <p>You Choose Pink</p>
+</ng-template>
+<ng-template #elseblock>
+    <p>You Choose Purple</p>
+</ng-template> 
+
+<h4>*ngFor with Array Directive</h4>
+<div *ngFor="let people of peoples">
+    <li>{{people}}</li>
+</div>
+
+<h4>*ngFor with Object Of Array Directive</h4>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+    </tr>
+    <tr *ngFor="let Information of Informations">
+        <td> {{Information.name}}</td>
+        <td>{{Information.Favcolor}}</td>
+    </tr> 
+</table>
+
+<h4>*ngSwitch Directive</h4>  
+<div *ngFor="let Information of Informations">
+<div [ngSwitch]="Information.name">
+    <p *ngSwitchCase="'Supriya'">Supriya</p>
+    <p *ngSwitchCase="'Sandhya'">Sandhya</p>
+    <p *ngSwitchCase="'Shailaja'">Shailaja</p>
+    <p *ngSwitchDefault>Kishanrao</p>
+</div>
+</div>
+
+<h4>ngStyle Using Static Directive</h4>  
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+    </tr>
+    <tr *ngFor="let Information of Informations">
+        <td> {{Information.name}}</td>
+        <td [ngStyle]="{'color':'green'}">{{Information.Favcolor}}</td>
+    </tr> 
+</table>
+
+<h4>Dynamic By Using Method ngStyle Directive</h4>  
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+    </tr>
+    <tr *ngFor="let Information of Informations">
+        <td> {{Information.name}}</td>
+        <td [ngStyle]="{'color':getColor(Information.Favcolor)}">{{Information.Favcolor}}</td>
+    </tr> 
+</table>
+
+<h4>Dynamic By Using Condition ngStyle Directive</h4>  
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+    </tr>
+    <tr *ngFor="let Information of Informations">
+        <td> {{Information.name}}</td>
+        <td [ngStyle]="{'color':Information.condition===true?'purple':'red'}">{{Information.Favcolor}}</td>
+    </tr> 
+</table>
+
+<h4>ngClass Directive</h4>
+<p [ngClass]="'one two'">Using ngClass With String</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+    </tr>
+    <tr *ngFor="let Information of Informations">
+        <td> {{Information.name}}</td>
+        <td [ngClass]="'one'">{{Information.Favcolor}}</td>
+    </tr> 
+</table>
+
+<p [ngClass]="['three','two']">Using ngClass With Array</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+    </tr>
+    <tr *ngFor="let Information of Informations">
+        <td> {{Information.name}}</td>
+        <td [ngClass]="['three','four']">{{Information.Favcolor}}</td>
+    </tr> 
+</table>
+
+<p [ngClass]="{'one':true,'two':true}">Using ngClass With Object</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+    </tr>
+    <tr *ngFor="let Information of Informations">
+        <td> {{Information.name}}</td>
+        <td [ngClass]="{'three':true,'two':false}">{{Information.Favcolor}}</td>
+    </tr> 
+</table>
+
+<p [ngClass]="getCssColor('color')">Using ngClass With Method</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+    </tr>
+    <tr *ngFor="let Information of Informations">
+        <td> {{Information.name}}</td>
+        <td [ngClass]="getlistColor('color')">{{Information.Favcolor}}</td>
+    </tr> 
+</table>

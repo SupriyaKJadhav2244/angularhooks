@@ -1,0 +1,45 @@
+<h3>Filters / Pipes</h3>
+  
+<h4><li>Filters On String</li></h4> 
+Name : {{name}}<br>
+LowerCase : {{name | lowercase}}<br>
+UpperCase : {{name | uppercase}}<br>
+TitleCase : {{name | titlecase}}<br>
+Slice : {{name | slice:5}}<br>
+Slice : {{name | slice:5:8}}<br>
+
+<h4><li>Filters On Date</li></h4> 
+Date : {{Date}}<br>
+Date : {{Date | date}}<br>
+ShortDate : {{Date | date:'shortDate'}}<br>
+LongDate : {{Date | date:'longDate'}}<br>
+FullDate : {{Date | date:'fullDate'}}<br>
+Medium : {{Date | date:'medium'}}<br>
+MediumTime : {{Date | date:'mediumTime'}}<br>
+SpecialPattern : {{Date | date:'dd/MM/yyy'}}<br>
+SpecialPattern : {{Date | date:'dd-MM-yyyy'}}<br>
+SpecialPattern : {{Date | date:'dd-MM-yy'}}<br>
+
+<h4><li>Filters On Percent</li></h4> 
+Percent : {{Number}}<br>
+Percent : {{Number | percent}}<br>
+Percent : {{Number | percent:'1.0-3'}}<br>
+Percent : {{Number | percent:'1.0-2'}}<br>
+
+<h4><li>Filters On Number</li></h4> 
+Number : {{Number}}<br>
+Number : {{Number | number}}<br>
+Number : {{Number | number:'1.0-3'}}<br>
+Number : {{Number | number:'1.0-2'}}<br>
+
+<h4><li>Filters On Currency</li></h4> 
+Currency : {{money}}<br>
+Currency : {{money| currency}}<br>
+Currency : {{money| currency:'INR'}}<br>
+Currency : {{money| currency:'INR':'code'}}<br> 
+
+<h4><li>Parameterized Filter</li></h4> 
+Currency : {{money| currency:'INR':'code'}}<br> 
+
+<h4 appCustomdirective><li>Custom Pipe With Chaining / Multiple Filter</li></h4> 
+Custom Pipe With Chaining : <span appCustomdirective>{{Name | titlecase | mypipe:gender }}</span><br>
